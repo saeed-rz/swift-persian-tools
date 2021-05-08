@@ -25,4 +25,17 @@ class TestIntExtension: XCTestCase {
 
         XCTAssert((number.convertToPersianText() ?? "") == "صد و بیست و پنج")
     }
+
+    func testFormatPrice() throws {
+        var input = 1000
+
+        XCTAssert(input.convertToCommaSeperatedCurrency(symbol: .IRR) == "1,000 ﷼")
+
+        input = 25000
+        XCTAssertFalse(input.convertToCommaSeperatedCurrency(symbol: .IRR) == "25,000 تومان")
+
+        XCTAssert(input.convertToCommaSeperatedCurrency(symbol: .Toman) == "25,000 تومان")
+
+        XCTAssert(input.convertToCommaSeperatedCurrency(symbol: .Dollar) == "$25,000")
+    }
 }

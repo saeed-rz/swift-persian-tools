@@ -7,7 +7,16 @@
 
 import Foundation
 
-extension String {
+public extension String {
+
+    func removeComma() -> String {
+        return SwiftPersianTools.removeComma(from: self)
+    }
+
+    func addComma() -> String? {
+        return SwiftPersianTools.addComma(to: self.convertPersianNumberToEnglish())
+    }
+
     func isPersianPhoneNumber() -> Bool {
         let input = self.convertPersianNumberToEnglish()
         do {

@@ -1,6 +1,11 @@
 language: swift
 
 osx_image: xcode12.5
+
+branches:
+  only:
+  - master
+
 env:
   matrix:
     - TEST_SDK=iphonesimulator14.5 OS=14.5 NAME='iPhone 12 Pro'

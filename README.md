@@ -25,3 +25,14 @@
 ```ruby
 pod 'SwiftPersianTools'
 ```
+
+## Usage
+
+### Convert Numbers to Persian words
+```swift
+import SwiftPersianTools
+
+let number: Int = 1546
+number.convertToPersianText()   /// "یک هزار و پانصد و چهل و شش"
+
+```
